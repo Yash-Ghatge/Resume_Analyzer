@@ -10,13 +10,13 @@ const app = express()
 
 app.use(express.json())
 app.use(cors())
-app.use('/api/analyze',resumeRouter)
+
 ConnectDB()
 
 app.get('/',(req,res)=>{
     res.send('API IS WORKING')
 })
-
+app.use('/api/analyze',resumeRouter)
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT,()=>{
