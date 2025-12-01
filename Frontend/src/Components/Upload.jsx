@@ -27,7 +27,7 @@ const Upload = () => {
       const formData = new FormData();
       formData.append("resume", file);
 
-      const response = await fetch("http://localhost:5000/api/analyze/fileupload", {
+      const response = await fetch("https://resume-analyzer-ioep.onrender.com/api/analyze/fileupload", {
         method: "POST",
         body: formData,
       });
