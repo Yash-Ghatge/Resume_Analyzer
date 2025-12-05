@@ -20,6 +20,7 @@ const Analysis = () => {
   }
 
   const ai = result.data || {};
+  const name = ai.name || "You";
   const score = ai.ats_score ?? 0;
   const skills = ai.skills || [];
   const softSkills = ai.soft_skills || [];
@@ -42,7 +43,7 @@ const Analysis = () => {
               Resume Analysis Report
             </h2>
             <p className="text-sm text-gray-400 mt-1">
-              Candidate: <span className="font-medium">You</span>
+              Candidate: <span className="font-medium">{name}</span>
             </p>
           </div>
           <p className="text-sm text-gray-400">Analyzed on <span className="font-medium">{analyzedDate}</span></p>
