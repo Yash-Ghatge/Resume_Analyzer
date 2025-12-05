@@ -64,12 +64,14 @@ export const response = async ( req , res) => {
         const aiResponse = await analyze(text)
 
         const doc = await Resume.create({
+            name: aiResponse.name || "",
+            email: aiResponse.email || "",
             resumeText: text,
             resumeUrl: cloudinaryUrl,
             AIresponse: aiResponse,
         });
 
-        res.status(200).json({success:true,message:'File Uploaded',data: doc.AIresponse,fileUrl: doc.resumeUrl})
+        res.status(200).json({success:true,message:'File Uploaded',name:doc.name,data: doc.AIresponse,fileUrl: doc.resumeUrl})
 
     
     } catch (error) {
