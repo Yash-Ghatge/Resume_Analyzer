@@ -1,8 +1,6 @@
 import mongoose from 'mongoose'
 
 const resumeSchema = new mongoose.Schema({
-    name : { type : String  },
-    email : { type : String },
     resumeUrl: { type: String, required: true },
     AIresponse : {
       skills: { type: [String], default: [] },
