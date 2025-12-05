@@ -6,18 +6,21 @@ dotenv.config()
 import resumeRouter from './Route/resumeRoute.js'
 
 const app = express()
-
+const PORT = process.env.PORT || 5000
+ConnectDB()
 
 app.use(express.json())
 app.use(cors())
 
-ConnectDB()
+
 
 app.get('/',(req,res)=>{
     res.send('API IS WORKING')
 })
+
+
 app.use('/api/analyze',resumeRouter)
-const PORT = process.env.PORT || 5000
+
 
 app.listen(PORT,()=>{
     console.log('Server is running on port 5000')
