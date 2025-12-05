@@ -64,8 +64,8 @@ export const response = async ( req , res) => {
         const aiResponse = await analyze(text)
 
         const doc = await Resume.create({
-            name: aiResponse.name || "",
-            email: aiResponse.email || "",
+            name: req.body.name || "",
+            email: req.body.email || "",
             resumeText: text,
             resumeUrl: cloudinaryUrl,
             AIresponse: aiResponse,

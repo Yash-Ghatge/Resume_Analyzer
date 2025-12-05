@@ -16,8 +16,6 @@ Your task: read the resume text carefully and produce structured JSON ONLY, matc
 🎯 OUTPUT JSON SCHEMA
 -------------------------------------
 {
-  "name":string,
-  "email":string,
   "skills": string[],                    // Technical + soft skills detected
   "technical_skills": string[],          // Only tech stack, languages, tools
   "soft_skills": string[],               // Communication, teamwork, leadership, etc.
